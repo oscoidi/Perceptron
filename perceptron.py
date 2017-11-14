@@ -133,4 +133,6 @@ class Perceptron():
 		entrenamiento = open(self.saveurl,'w')
 		entrenamiento.write(str(self.perceptron))
 		entrenamiento.close
-
+		
+if __name__ == "__main__":
+    Perceptron()
