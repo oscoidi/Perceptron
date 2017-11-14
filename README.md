@@ -1,5 +1,5 @@
 # Perceptron
-Perceptron diseñado con la idea de asimilar los conceptos escondidos detras del algoritmo backpropagation.
+Perceptron diseñado con la idea de asimilar los conceptos escondidos detras del algoritmo backpropagation. Además lo he programado de la manera mas general posible pudiendose utilizar como libreria  para resolver multiples problemas en caso de que asi se desee.
 Para ejemplificar el funcionamiento del programa la red neuronal recibira dos numeros(entre 0 y 1) y debera decidir cual de los dos es mayor(salida = 1 si el primero es mayor que el segundo, 0 en caso contrario.)
 El paquete consta de tres archivos:
   - perceptron.py es el programa de python que nos realizara todos los calculos y nos generara la red neuronal. Deberemos cambiar       el url donde estamos trabajando en funcion de donde guardemos el programa. 
