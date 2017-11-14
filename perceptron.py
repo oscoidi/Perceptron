@@ -44,7 +44,7 @@ class Perceptron():
 			capa.append(u)
 			capa.append(w)
 			capa.append(a)
-			self.perceptron.append(capa) #añadimos la capa a la red neuronal
+			self.perceptron.append(capa) #anadimos la capa a la red neuronal
 
 	def percep(self):#funcion que calcula la salida de la red neuronal ante una serie de entradas
 		print('salida de las neuronas capa 0:')
