@@ -14,7 +14,7 @@ class Perceptron():
 		self.alpha = 0.6 #factor de aprendizaje. Cuanto mayor es antes aprende pero tiene menor precision
 		self.perceptron = [] # array que nos define el perceptron y por cada capa contiene un subarray de la siguiente forma: [numero neurons de la capa,[umbrales de actuacion(u)],[pesos(w)],[salidas de las neuronas(a)]]
 		self.ntrain = 0 #numero de entrenamientos ejecutados
-		os.chdir('/home/python/Desktop/Perceptron') #cambiamos el directorio de trabajo(debereis cambiarlo por la direccion donde guardeis el programa)
+		os.chdir(os.getcwd()) #cambiamos el directorio de trabajo(debereis cambiarlo por la direccion donde guardeis el programa)
 		self.cwd = os.getcwd()
 		self.saveurl = self.cwd + '/perceptron.txt' #url donde guardaremos la red neuronal una vez entrenada
 		self.trainingdata = self.cwd + '/entrenamientoperc.txt' #url donde tenemos la training data
@@ -110,7 +110,10 @@ class Perceptron():
 		#empezamos por la ultima capa de neuronas
 		deltam = []
 		for k in range(self.perceptron[len(self.perceptron)-1][0]):
-			deltam.append(self.perceptron[len(self.perceptron)-1][3][k]*(1 - self.perceptron[len(self.perceptron)-1][3][k]) * (self.perceptron[len(self.perceptron)-1][3][k] - se[k]))
+
+			deltam.append(self.perceptron[len(self.perceptron)-1][3][k]*(1 - self.perceptron[len(self.perceptron)-1][3][k]) * (self.perceptron[len(self.perceptron)-1][3][k] - float(se[k])))
+			
+
 			for n in range(self.perceptron[len(self.perceptron)-2][0]):
 				self.perceptron[len(self.perceptron)-1][2][k][n] = self.perceptron[len(self.perceptron)-1][2][k][n] - self.alpha * deltam[k] * self.perceptron[len(self.perceptron)-2][3][n]
 			self.perceptron[len(self.perceptron)-1][1][k] = self.perceptron[len(self.perceptron)-1][1][k] - self.alpha * deltam[k]
@@ -133,6 +136,8 @@ class Perceptron():
 		entrenamiento = open(self.saveurl,'w')
 		entrenamiento.write(str(self.perceptron))
 		entrenamiento.close
+
+
 		
 if __name__ == "__main__":
     Perceptron()
