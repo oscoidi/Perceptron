@@ -27,12 +27,12 @@ class Perceptron():
 
 	def build(self): #funcion que construye la red neuronal
 		print('***PERCEPTRON***')
-		for i in range(input('numero de capas: ')):
+		for i in range(int(input('numero de capas: '))):
 			capa = []
 			u = []
 			w = []
 			a = []
-			capa.append(input('numero de neuronas en la capa ' + str(i) + ' : '))#anadimos el numero de neuronas de la capa
+			capa.append(int(input('numero de neuronas en la capa ' + str(i) + ' : ')))#anadimos el numero de neuronas de la capa
 			for j in range(capa[0]):
 				u.append(random.random()) #creamos umbrales de actuacion aleatorios
 				a.append(random.random()) #creamos salidas aleatorias
